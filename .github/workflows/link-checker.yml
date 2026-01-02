@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
         with:
           # Check all markdown files but exclude node_modules
           # Use --fail=false to prevent blocking the build for now, until we fix all links
