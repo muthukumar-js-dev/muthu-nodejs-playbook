@@ -10,6 +10,10 @@ on:
     - cron: '0 9 * * 1'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   link-check:
     runs-on: ubuntu-latest
@@ -20,7 +24,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
         with:
-          # Check all markdown files
+          # Check all markdown files but exclude node_modules
           args: |
             --verbose
             --no-progress
@@ -28,6 +32,8 @@ jobs:
             --exclude 'linkedin.com'
             --exclude 'twitter.com'
             --exclude 'buymeacoffee.com'
+            --exclude-path 'node_modules'
+            --exclude-path 'docs/node_modules'
             --max-retries 3
             --timeout 20
             '**/*.md'

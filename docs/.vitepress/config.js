@@ -201,5 +201,11 @@ export default withMermaid(defineConfig({
       light: 'github-light',
       dark: 'github-dark'
     }
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: ['mermaid', 'vitepress-plugin-mermaid']
+    }
   }
 }))
