@@ -243,7 +243,7 @@ Mastering Node.js is a journey. Use this playbook as your map, but remember that
 If you found this playbook helpful, consider buying me a coffee! ☕
 
 <a href="https://www.buymeacoffee.com/muthukumar">
-  <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=muthukumar&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="200" />
 </a>
 
 </div>
