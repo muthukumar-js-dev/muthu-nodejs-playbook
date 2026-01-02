@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/muthukumar-js-dev/muthu-nodejs-playbook/discussions
+    about: Ask questions, share experiences, or discuss Node.js production topics
+  - name: 📖 Read Contributing Guidelines
+    url: https://github.com/muthukumar-js-dev/muthu-nodejs-playbook/blob/main/CONTRIBUTING.md
+    about: Learn how to contribute to this playbook

@@ -1,0 +1,58 @@
+name: Question
+description: Ask a question about the content or concepts
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question about the playbook content? Ask here!
+        
+        **Note**: For general Node.js questions not related to this playbook, consider using Stack Overflow or GitHub Discussions instead.
+
+  - type: input
+    id: related-topic
+    attributes:
+      label: Related Topic
+      description: Which topic is your question about?
+      placeholder: "e.g., Event Loop, Circuit Breaker, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: |
+        Be as specific as possible. Include:
+        - What you're trying to understand
+        - What you've already tried or read
+        - Any specific confusion points
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide any relevant context
+      placeholder: |
+        - Are you working on a specific project?
+        - What's your current understanding?
+        - Why is this question important to you?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Before submitting, please confirm
+      options:
+        - label: I've read the relevant topic in the playbook
+          required: true
+        - label: I've searched existing issues and discussions
+          required: true
+        - label: This question is specifically about playbook content (not general Node.js help)
+          required: false

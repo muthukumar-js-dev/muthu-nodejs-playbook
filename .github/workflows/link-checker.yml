@@ -1,0 +1,54 @@
+name: Link Checker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    # Run weekly on Mondays at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # Check all markdown files
+          args: |
+            --verbose
+            --no-progress
+            --exclude-mail
+            --exclude 'linkedin.com'
+            --exclude 'twitter.com'
+            --exclude 'buymeacoffee.com'
+            --max-retries 3
+            --timeout 20
+            '**/*.md'
+          fail: true
+
+      - name: Create Issue on Failure
+        if: failure() && github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '🔗 Broken Links Detected';
+            const body = `Automated link checker found broken links in the repository.
+            
+            **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+            Please review and fix the broken links.`;
+            
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['bug', 'automated']
+            });

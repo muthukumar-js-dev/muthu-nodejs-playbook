@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # Maintain dependencies for the documentation site
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      vitepress:
+        patterns:
+          - "vitepress"
+          - "vitepress-plugin-mermaid"
+          - "mermaid"
+    open-pull-requests-limit: 10
+
+  # Maintain GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"

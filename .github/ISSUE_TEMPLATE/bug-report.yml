@@ -1,0 +1,65 @@
+name: Bug Report
+description: Report technical inaccuracies or errors in the content
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us maintain accuracy! 
+        
+        Use this template to report technical errors, broken links, or inaccuracies.
+
+  - type: input
+    id: topic
+    attributes:
+      label: Topic/File
+      description: Which topic contains the error?
+      placeholder: "e.g., 01-nodejs-architecture.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-description
+    attributes:
+      label: Error Description
+      description: What is incorrect or broken?
+      placeholder: |
+        - What is the current (incorrect) content?
+        - What should it be instead?
+        - Why is this incorrect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence/References
+      description: Provide sources or documentation supporting the correction
+      placeholder: |
+        - Links to official documentation
+        - References to Node.js source code
+        - Production evidence or benchmarks
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How significant is this error?
+      options:
+        - Critical (fundamentally incorrect information)
+        - High (misleading or significantly inaccurate)
+        - Medium (minor inaccuracy or outdated info)
+        - Low (typo, formatting, or broken link)
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+    validations:
+      required: false

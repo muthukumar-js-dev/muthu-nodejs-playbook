@@ -1,0 +1,33 @@
+{
+  "name": "muthu-nodejs-playbook",
+  "version": "1.0.0",
+  "description": "Production-focused Node.js playbook covering internals, system design, and scalable architectures",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "nodejs",
+    "backend",
+    "system-design",
+    "production",
+    "microservices",
+    "architecture",
+    "scalability",
+    "performance"
+  ],
+  "author": "Muthukumar",
+  "license": "MIT",
+  "devDependencies": {
+    "mermaid": "^11.12.2",
+    "vitepress": "^1.0.0",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muthukumar-js-dev/muthu-nodejs-playbook.git"
+  },
+  "homepage": "https://github.com/muthukumar-js-dev/muthu-nodejs-playbook#readme"
+}

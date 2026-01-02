@@ -1,0 +1,70 @@
+name: Content Suggestion
+description: Suggest new content or improvements to existing topics
+title: "[Content]: "
+labels: ["content", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the Node.js Production Playbook! 
+        
+        This template is for suggesting new topics or improvements to existing content.
+
+  - type: dropdown
+    id: suggestion-type
+    attributes:
+      label: Suggestion Type
+      description: What type of content suggestion is this?
+      options:
+        - New topic proposal
+        - Improvement to existing topic
+        - Additional production scenario
+        - Better diagram or mental model
+        - Correction or clarification
+    validations:
+      required: true
+
+  - type: input
+    id: related-topic
+    attributes:
+      label: Related Topic/Section
+      description: Which topic or section does this relate to?
+      placeholder: "e.g., Section 4: System Design - Circuit Breaker"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe your suggestion in detail
+      placeholder: |
+        - What content should be added or changed?
+        - Why is this important for production systems?
+        - What production scenario does this address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: production-context
+    attributes:
+      label: Production Context
+      description: Provide real-world context or scenarios
+      placeholder: |
+        - Have you encountered this in production?
+        - What problem does this solve?
+        - What are the trade-offs?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information, links, or references
+      placeholder: |
+        - Links to documentation
+        - References to similar implementations
+        - Related topics in the playbook
+    validations:
+      required: false
