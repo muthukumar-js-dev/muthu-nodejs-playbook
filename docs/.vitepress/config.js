@@ -208,6 +208,9 @@ export default withMermaid(defineConfig({
   vite: {
     optimizeDeps: {
       include: ['mermaid', 'vitepress-plugin-mermaid']
+    },
+    ssr: {
+      noExternal: ['mermaid', 'vitepress-plugin-mermaid']
     }
   }
 }))
