@@ -5,6 +5,8 @@ export default withMermaid(defineConfig({
   title: 'Node.js Production Playbook',
   description: 'Production-focused playbook for building scalable Node.js backend systems',
   
+
+  
   base: '/muthu-nodejs-playbook/',
   
   themeConfig: {

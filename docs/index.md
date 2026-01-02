@@ -74,7 +74,7 @@ Every concept is grounded in real production scenarios, failure modes, and archi
 ### System Design
 - [Microservices](/sections/04-system-design/31-monolith-to-microservices) - When and how to split
 - [Message Brokers](/sections/03-event-driven-architecture/21-message-brokers) - Event-driven systems
-- [Distributed Tracing](/sections/07-production-readiness/64-distributed-tracing) - Observability
+- [Distributed Tracing](/sections/07-production-readiness/62-distributed-tracing) - Observability
 
 ## Support This Project
 

@@ -121,4 +121,4 @@ Search is built during the build process. Run `npm run docs:build` to generate t
 
 ## Contributing
 
-See the main [CONTRIBUTING.md](../CONTRIBUTING.md) for contribution guidelines.
+See the main [CONTRIBUTING.md](https://github.com/muthukumar-js-dev/muthu-nodejs-playbook/blob/main/CONTRIBUTING.md) for contribution guidelines.

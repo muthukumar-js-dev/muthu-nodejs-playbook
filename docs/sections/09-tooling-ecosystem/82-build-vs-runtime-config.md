@@ -90,7 +90,7 @@ console.log(config.apiUrl); // Read from environment at runtime
 <!-- index.html -->
 <script>
   window.CONFIG = {
-    API_URL: '{{API_URL}}', // Replaced by server at runtime
+    API_URL: '{{ '{{' }}API_URL}}', // Replaced by server at runtime
   };
 </script>
 ```
@@ -381,14 +381,14 @@ if (process.env.NODE_ENV === 'production') {
 
 ### Config injection fails
 
-**Scenario**: Server crashes before injecting config. Frontend loads with placeholders (`{{API_URL}}`). App breaks.
+**Scenario**: Server crashes before injecting config. Frontend loads with placeholders (`` `{{API_URL}}` ``). App breaks.
 
 **Impact**: Total outage.
 
 **Solution**: Validate config injection. Fail fast if placeholders remain.
 
 ```javascript
-if (window.CONFIG.API_URL.includes('{{')) {
+if (window.CONFIG.API_URL.includes('{{ '{{' }}')) {
   throw new Error('Config injection failed');
 }
 ```
@@ -461,7 +461,7 @@ if (window.CONFIG.API_URL.includes('{{')) {
 
 **Follow-up**: "How do you inject runtime config into frontend apps?"
 
-**Answer**: "I use server-side injection. The server serves the static HTML and replaces placeholders with actual config values at runtime. For example, my HTML has `<!-- CONFIG_PLACEHOLDER -->`, and the Express server replaces it with `<script>window.CONFIG = {API_URL: 'https://api.prod.com'};</script>`. The frontend reads `window.CONFIG.API_URL`. This way, the same build works in all environments—only the server's environment variables change. I validate that placeholders are replaced by checking if `window.CONFIG.API_URL` contains `{{`—if it does, config injection failed and I throw an error."
+**Answer**: "I use server-side injection. The server serves the static HTML and replaces placeholders with actual config values at runtime. For example, my HTML has `<!-- CONFIG_PLACEHOLDER -->`, and the Express server replaces it with `<script>window.CONFIG = {API_URL: 'https://api.prod.com'};</script>`. The frontend reads `window.CONFIG.API_URL`. This way, the same build works in all environments—only the server's environment variables change. I validate that placeholders are replaced by checking if `window.CONFIG.API_URL` contains `{{ '{{' }}`—if it does, config injection failed and I throw an error."
 
 **Follow-up**: "When would you use build-time config?"
 
